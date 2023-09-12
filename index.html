@@ -38,6 +38,37 @@
       <h4>Ladinofel</h4>
     </div>
   </div>
+  <dialog id="modal">
+    <h3 class="modal-title">New Book:</h3>
+    <form action="" method="get" autocomplete="off">
+      <div class="title">
+        <label for="book-title">Book title:</label>
+        <input type="text" id="book-title" name="book-title">
+      </div>
+      <div class="author">
+        <label for="book-author">Book author:</label>
+        <input type="text" id="book-author" name="book-author">
+      </div>
+      <div class="page-count">
+        <label for="page-number">Page number:</label>
+        <input type="text" id="page-number" name="page-number">
+      </div>
+      <div class="read">
+        <label for="book-status">Have you read this book?</label>
+        <select name="book-status" id="book-status">
+          <option value="yes">YES</option>
+          <option value="no">NO</option>
+        </select>
+      </div>
+      <div class="category">
+        <label for="book-category">Choose the book category:</label>
+        <select name="book-category" id="book-category">
+          <option value="leisure">Leisure</option>
+          <option value="study-work">Study / Work</option>
+        </select>
+      </div>
+    </form>
+  </dialog>
 </body>
 <script src="./script.js"></script>
 </html>
