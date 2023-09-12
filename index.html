@@ -39,7 +39,7 @@
     </div>
   </div>
   <dialog id="modal">
-    <h3 class="modal-title">New Book:</h3>
+    <h2 class="modal-title">New Book</h2>
     <form action="" method="get" autocomplete="off">
       <div class="title">
         <label for="book-title">Book title:</label>
@@ -54,19 +54,32 @@
         <input type="text" id="page-number" name="page-number">
       </div>
       <div class="read">
-        <label for="book-status">Have you read this book?</label>
-        <select name="book-status" id="book-status">
-          <option value="yes">YES</option>
-          <option value="no">NO</option>
-        </select>
+        <p>Have you read this book?</p>
+        <div class="options">
+          <div class="yes">
+            <input type="radio" id="book-status" name="book-status" value="yes">
+            <label for="book-status">Yes</label>
+          </div>
+          <div class="no">
+            <input type="radio" id="book-status" name="book-status" value="no">
+            <label for="book-status">No</label>
+          </div>
+        </div>
       </div>
       <div class="category">
-        <label for="book-category">Choose the book category:</label>
-        <select name="book-category" id="book-category">
-          <option value="leisure">Leisure</option>
-          <option value="study-work">Study / Work</option>
-        </select>
-      </div>
+        <p>Choose the book category:</p>
+        <div class="options">
+          <div class="leisure">       
+            <input type="radio" id="leisure" name="book-category" value="leisure">
+            <label for="leisure">Leisure</label>  
+          </div>       
+          <div class="work">
+            <input type="radio" id="study-work" name="book-category" value="study-work"> 
+            <label for="study-work">Work / Study</label>     
+          </div>       
+        </div>
+      </div>  
+      <button id="submit-book">Submit book</button>
     </form>
   </dialog>
 </body>

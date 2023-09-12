@@ -106,15 +106,17 @@ img {
 #modal {
   border: solid black 2px;
   border-radius: 18px;
+  padding: 40px;
 }
 
 #modal::backdrop {
-  background: linear-gradient(45deg, #7a6de8, #2793FA);
+  background: linear-gradient(45deg, #38918B, #2793FA);
   opacity: 0.5;
 }
 
 .modal-title {
   text-align: center;
+  font-weight: 800;
 }
 
 form {
@@ -123,3 +125,39 @@ form {
   gap: 20px;
 }
 
+  #book-title,
+  #book-author,
+  #page-number {
+  padding: 5px;
+  border: none;
+  background-color: #c2dff9;
+  border-radius: 15px;
+  width: 90%;
+  margin-top: 5px;
+}
+
+#submit-book {
+  padding: 10px;
+  background-color: #2793FA;;
+  color: white;
+  border-radius: 15px;
+  border-color: white;
+  font-weight: 500;
+  width: 50%;
+  align-self: center;
+  transition: 0.5s;
+  margin-top: 10px;
+}
+
+#submit-book:hover {
+  background-color: #285185;  
+  cursor: pointer;
+}
+
+
+.options {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: start;
+}
