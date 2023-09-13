@@ -1,14 +1,10 @@
 //Initialize variables
 let plus_button = document.getElementById('plus');
 let modal = document.querySelector('#modal');
-let book_title;
-let book_author;
-let page_count;
-let book_status;
-let book_category;
 let submit_btn = document.getElementById('submit-book');
 let generic_book;
-let myLibrary = {};
+let myForm;
+let myLibrary = [];
 
 //This event listener triggers the modal 
 plus_button.addEventListener('click', () => {
@@ -26,12 +22,15 @@ function Book(book_title, book_author, page_count, book_status, book_category) {
 
 //This event listener collects the book info from the form and stores it into myLibrary
 submit_btn.addEventListener('click', () => {
-  book_title = document.getElementById('book-title').value;
-  book_author = document.getElementById('book-author').value;
-  page_count = document.getElementById('page-number').value;
-  book_status = document.querySelector('input[name="book-status"]:checked').value;
-  book_category = document.querySelector('input[name="book-category"]:checked').value;
+  let book_title = document.getElementById('book-title').value;
+  let book_author = document.getElementById('book-author').value;
+  let page_count = document.getElementById('page-number').value;
+  let book_status = document.querySelector('input[name="book-status"]:checked').value;
+  let book_category = document.querySelector('input[name="book-category"]:checked').value;
   generic_book = new Book(book_author, book_title, page_count, book_status, book_category);
+  myForm = document.getElementById('myForm').reset();
   console.log(generic_book);
+  myLibrary.push(generic_book);
+  console.log(myLibrary);
   modal.close();
 })
