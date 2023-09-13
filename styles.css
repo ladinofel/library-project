@@ -147,6 +147,7 @@ form {
   align-self: center;
   transition: 0.5s;
   margin-top: 10px;
+  font-size: 16px;
 }
 
 #submit-book:hover {
