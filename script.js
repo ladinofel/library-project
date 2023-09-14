@@ -33,4 +33,28 @@ submit_btn.addEventListener('click', () => {
   myLibrary.push(generic_book);
   console.log(myLibrary);
   modal.close();
+  cardCreator();
 })
+
+//This function creates the card, grabs book info from myLibrary and modifies the DOM for display.
+function cardCreator () {  
+  let card = document.createElement('div');
+  let card_title = document.createElement('p');
+  let card_author = document.createElement('p');
+  let card_page = document.createElement('p');
+  let card_status = document.createElement('p');
+  card_title.textContent = `Title: ${myLibrary[myLibrary.length - 1].book_title}`;
+  card_author.textContent = `Author: ${myLibrary[myLibrary.length - 1].book_author}`;
+  card_page.textContent = `Page number: ${myLibrary[myLibrary.length - 1].page_count}`;
+  card_status.textContent = `Book status: ${myLibrary[myLibrary.length - 1].book_status}`;
+  card.append(card_title, card_author, card_page, card_status);
+  if(myLibrary[myLibrary.length -1].book_category === 'leisure'){
+    let left_grid = document.querySelector('.left-grid');
+    card.classList.add('leisure-card');
+    left_grid.appendChild(card);
+    } else {
+    let right_grid = document.querySelector('.right-grid');
+    card.classList.add('work-card');
+    right_grid.appendChild(card);
+  }
+}
