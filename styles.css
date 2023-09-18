@@ -180,3 +180,13 @@ form {
 .work-card {
   border-color: red;
 }
+
+.btn_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  height: 20px;
+  cursor: pointer;
+}
