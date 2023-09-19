@@ -5,7 +5,6 @@ let submit_btn = document.getElementById('submit-book');
 let generic_book;
 let myForm;
 let myLibrary = [];
-let index;
 
 //This event listener triggers the modal 
 plus_button.addEventListener('click', () => {
@@ -30,18 +29,12 @@ submit_btn.addEventListener('click', () => {
   let book_category = document.querySelector('input[name="book-category"]:checked').value;
   generic_book = new Book(book_author, book_title, page_count, book_status, book_category);  
   myForm = document.getElementById('myForm').reset();
-  console.log(generic_book);
   myLibrary.push(generic_book);
-  console.log(myLibrary);
-  index = myLibrary.indexOf(generic_book);
-  myLibrary[index].index = index;
-  console.log(index);
-  console.log(myLibrary);
   modal.close();
   cardCreator(generic_book);
 })
 
-//This function creates the card, grabs book info from myLibrary and modifies the DOM for display.
+//This function creates the card, grabs book info from myLibrary and modifies the DOM for display. It also includes the delete function. 
 function cardCreator (generic_book) {  
   let card = document.createElement('div');
   let btn_container = document.createElement('div');
@@ -74,7 +67,6 @@ function cardCreator (generic_book) {
   
   delete_btn.addEventListener('click', () => {
     myLibrary.splice(myLibrary.indexOf(generic_book), 1);
-    card.remove();  
-    console.log(index);
+    card.remove(); 
   })  
 }
