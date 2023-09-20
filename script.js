@@ -18,6 +18,13 @@ function Book(book_title, book_author, page_count, book_status, book_category) {
   this.page_count = page_count;
   this.book_status = book_status;
   this.book_category = book_category;
+  this.change_status = function (generic_book) {
+    if(myLibrary[myLibrary.indexOf(generic_book)].book_status == "READ ALREADY"){
+      myLibrary[myLibrary.indexOf(generic_book)].book_status = "NOT READ YET";
+    } else {
+      myLibrary[myLibrary.indexOf(generic_book)].book_status = "READ ALREADY";  
+    }
+  }
 }
 
 //This event listener collects the book info from the form and stores it into myLibrary
@@ -34,7 +41,7 @@ submit_btn.addEventListener('click', () => {
   cardCreator(generic_book);
 })
 
-//This function creates the card, grabs book info from myLibrary and modifies the DOM for display. It also includes the delete function. 
+//This function creates the card, grabs book info from myLibrary and modifies the DOM for display. It also includes the delete and change status functions. 
 function cardCreator (generic_book) {  
   let card = document.createElement('div');
   let btn_container = document.createElement('div');
@@ -69,4 +76,10 @@ function cardCreator (generic_book) {
     myLibrary.splice(myLibrary.indexOf(generic_book), 1);
     card.remove(); 
   })  
-}
+
+  status_btn.addEventListener('click', () => {
+    generic_book.change_status(generic_book);
+    card_status.textContent = `Book status: ${generic_book.book_status}`;
+    card.insertBefore(card_status, btn_container);
+  }
+)}
