@@ -28,7 +28,8 @@ function Book(book_title, book_author, page_count, book_status, book_category) {
 }
 
 //This event listener collects the book info from the form and stores it into myLibrary
-submit_btn.addEventListener('click', () => {
+function addBookLibrary () {
+  submit_btn.addEventListener('click', () => {
   let book_title = document.getElementById('book-title').value;
   let book_author = document.getElementById('book-author').value;
   let page_count = document.getElementById('page-number').value;
@@ -40,6 +41,7 @@ submit_btn.addEventListener('click', () => {
   modal.close();
   cardCreator(generic_book);
 })
+}
 
 //This function creates the card, grabs book info from myLibrary and modifies the DOM for display. It also includes the delete and change status functions. 
 function cardCreator (generic_book) {  
@@ -83,3 +85,5 @@ function cardCreator (generic_book) {
     card.insertBefore(card_status, btn_container);
   }
 )}
+
+addBookLibrary();
