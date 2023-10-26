@@ -11,21 +11,22 @@ plus_button.addEventListener('click', () => {
   modal.showModal();
 })
 
-//Constructor function
-function Book(book_title, book_author, page_count, book_status, book_category) {
-  this.book_title = book_title;
-  this.book_author = book_author;
-  this.page_count = page_count;
-  this.book_status = book_status;
-  this.book_category = book_category;
-  this.change_status = function (generic_book) {
-    if(myLibrary[myLibrary.indexOf(generic_book)].book_status == "READ ALREADY"){
-      myLibrary[myLibrary.indexOf(generic_book)].book_status = "NOT READ YET";
-    } else {
-      myLibrary[myLibrary.indexOf(generic_book)].book_status = "READ ALREADY";  
-    }
+//Class
+class Book {
+  constructor(book_title, book_author, page_count, book_status, book_category) {
+    this.book_title = book_title;
+    this.book_author = book_author;
+    this.page_count = page_count;
+    this.book_status = book_status;
+    this.book_category = book_category;
+    this.change_status = function (generic_book) {
+      if(myLibrary[myLibrary.indexOf(generic_book)].book_status == "READ ALREADY"){
+        myLibrary[myLibrary.indexOf(generic_book)].book_status = "NOT READ YET";
+      } else {
+        myLibrary[myLibrary.indexOf(generic_book)].book_status = "READ ALREADY";  
+      }
   }
-}
+}};
 
 //This event listener collects the book info from the form and stores it into myLibrary
 function addBookLibrary () {
